@@ -23,7 +23,6 @@ $(document).ready(function(){
     var result=scrabbleScore(inputWord);
     var not_number= isNaN(result);
     $("#top").addClass("top_container_form");
-    
     if(result ===0){
       alert("please enter a word");
       result=0
@@ -36,9 +35,9 @@ $(document).ready(function(){
       $("#words_table").append("<tr class='lead'><td>"+inputWord+"</td><td>"+result+"</td></tr>");
       finalPoints+=result;
       $("span").text(finalPoints);
-    $("#total_display").fadeIn("slow");
-    $("h3").fadeIn("slow");
-    $("#submitted_words_background").fadeIn('slow');
+      $("#total_display").fadeIn("slow");
+      $("h3").fadeIn("slow");
+      $("#submitted_words_background").fadeIn('slow');
     };
     $("input#word").val("");
     event.preventDefault();
