@@ -19,14 +19,18 @@ var scrabbleScore = function(word){
 $(document).ready(function(){
   var finalResult=0;
   $("form#wordform:first").submit(function(event){
-      var result=scrabbleScore($("input#word").val());
+      var inputWord=$("input#word").val();
+      var result=scrabbleScore(inputWord);
       finalResult+=result;
       $("#background").fadeIn('slow');
-      $("#wordslist").append("<li>"+$("input#word").val()+"</li>")
+      if(result===0){
+        inputWord="blank input"
+      }
+      $("#wordslist").append("<li>"+inputWord+"</li>")
       $("#pointslist").append("<li>"+result+"</li>")
       $("span").text(finalResult);
       $("h3").fadeIn("slow")
-      $("#wordfrom").empty(); 
+      $("input#word").val(""); 
 
     event.preventDefault();
 

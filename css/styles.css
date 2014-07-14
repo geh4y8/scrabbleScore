@@ -1,13 +1,21 @@
 body h1 {
-  color:yellow;
+  color:white;
+  padding-left:80px;
+  padding-top:50px;
 }
 
 body h2 {
   color:white;
 }
-body h3 {
+body h3{
   display:none;
   color:yellow;
+  font-size:50px;
+}
+
+#total {
+  position:relative;
+  left:500px;
 }
 
 .background-image{
@@ -37,8 +45,16 @@ body h3 {
   margin-left: 20px;
   margin-right: 20px;
 }
-
+#top_container {
+  background-color:black;
+  opacity:.6;
+  border-radius: 10px;
+  width:800px;
+  margin-left:170px;
+}
 #background {
+  position:absolute;
+  top:250px;
   background-color:grey;
   width:300px;
   height:500px;
@@ -61,3 +77,18 @@ body h3 {
   color:yellow;
   padding-right:30px;
 }
+
+#points_span {
+  font-size: 90px;
+  color:red;
+}
+
+#word {
+  width: 300px;
+}
+
+#wordform {
+  padding-left:200px;
+  padding-bottom:30px;
+}
+
