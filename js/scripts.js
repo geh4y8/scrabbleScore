@@ -8,8 +8,8 @@ var scrabbleScore = function(word){
     J:8, X:8,
     Q:10, Z:10}
   var totalScore = 0;
-  var input = word.toUpperCase().split("");
-  for(var i=0; i<input.length; i++){
+  var input = word.toUpperCase().split("");  //splits word into array
+  for(var i=0; i<input.length; i++){  //loops over word to find matching scores in scores object and adds to total score
     var number = scores[input[i]];
     totalScore +=number;
   };
@@ -17,22 +17,20 @@ var scrabbleScore = function(word){
 };
 
 $(document).ready(function(){
-  var finalResult=0;
+  var finalPoints=0;
   $("form#wordform:first").submit(function(event){
-      var inputWord=$("input#word").val();
-      var result=scrabbleScore(inputWord);
-      finalResult+=result;
-      $("#background").fadeIn('slow');
-      if(result===0){
-        inputWord="blank input"
-      }
-      $("#wordslist").append("<li>"+inputWord+"</li>")
-      $("#pointslist").append("<li>"+result+"</li>")
-      $("span").text(finalResult);
-      $("h3").fadeIn("slow")
-      $("input#word").val(""); 
-
+    var inputWord=$("input#word").val();
+    var result=scrabbleScore(inputWord);
+    finalPoints+=result;
+    $("#submitted_words_background").fadeIn('slow');
+    if(result===0){
+      inputWord="blank input";
+    }
+    $("#words_table").append("<tr class='lead'><td>"+inputWord+"</td><td>"+result+"</td></tr>");
+    $("span").text(finalPoints);
+    $("#total_display").fadeIn("slow");
+    $("h3").fadeIn("slow");
+    $("input#word").val(""); 
     event.preventDefault();
-
   });
 });

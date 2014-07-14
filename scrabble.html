@@ -5,31 +5,37 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <script src="js/jquery-1.11.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>ScrabbleScore</title>
+  <title>Scrabble Tracker</title>
 </head>
 <body>
-  <div class="background-image"></div>
+  <div class="background-image">
+  </div>
   <div class="content">
-  <div class="container">
-    <div id="top_container">
-      <h1>Keep track of your SCRABBLE score!</h1>
-      <form class="form-horizontal" role="form" id="wordform">
-        <div class="form-group">
-          <label for="input"></label>
-          <input type="text" class="form-control inputclass" id="word" placeholder="enter your word">
-        </div>
+    <div class="container">
+      <div id="top_container">
+        <form class="form-horizontal" role="form" id="wordform">
+          <div class="form-group">
+            <label for="input"></label>
+            <input type="text" class="form-control" id="word" autocomplete="off" placeholder="enter your scrabble word">
+          </div>
         <button type="submit" class="btn btn-default" id="btn">Submit</button>
-      </form>
-    </div>
-    <div id="total">
-      <h3>You have scrabbled <br><span id="points_span"></span> points!</h3>
-    </div>
-    <div id="background">
-      <div id="submittedWords"><h2>Words</h2><ul id="wordslist"></ul></div>
-      <div id="points"><h2>Points</h2><ul id="pointslist"></ul></div>
+        </form>
+      </div>
+      <div id="total_display">
+        <h3 class="lead">You have scrabbled <br><span id="points_span"></span> points!</h3>
+      </div>
+      <div id="submitted_words_background">
+        <div id="submitted_words_table">
+          <table class="table table-striped table-hover" id="words_table">
+            <tr class='lead'>
+              <th class='lead title'>Words</th>
+              <th class='lead title'>Points</th>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </body>
 </html>
 
