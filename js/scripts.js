@@ -21,18 +21,26 @@ $(document).ready(function(){
   $("form#wordform").submit(function(event){
     var inputWord=$("input#word").val();
     var result=scrabbleScore(inputWord);
-    finalPoints+=result;
+    var not_number= isNaN(result);
     $("#top").addClass("top_container_form");
-    $("#submitted_words_background").fadeIn('slow');
-    if(result===0){
-      inputWord="blank input";
+    
+    if(result ===0){
+      alert("please enter a word");
+      result=0
     }
-    $("#words_table").append("<tr class='lead'><td>"+inputWord+"</td><td>"+result+"</td></tr>");
-    $("span").text(finalPoints);
+    else if(not_number){
+      alert("please do not use special characters");
+      result=0
+    }
+    else{
+      $("#words_table").append("<tr class='lead'><td>"+inputWord+"</td><td>"+result+"</td></tr>");
+      finalPoints+=result;
+      $("span").text(finalPoints);
     $("#total_display").fadeIn("slow");
     $("h3").fadeIn("slow");
-    $("input#word").val(""); 
-
+    $("#submitted_words_background").fadeIn('slow');
+    };
+    $("input#word").val("");
     event.preventDefault();
   });
 });
