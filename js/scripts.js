@@ -18,10 +18,11 @@ var scrabbleScore = function(word){
 
 $(document).ready(function(){
   var finalPoints=0;
-  $("form#wordform:first").submit(function(event){
+  $("form#wordform").submit(function(event){
     var inputWord=$("input#word").val();
     var result=scrabbleScore(inputWord);
     finalPoints+=result;
+    $("#top").addClass("top_container_form");
     $("#submitted_words_background").fadeIn('slow');
     if(result===0){
       inputWord="blank input";
@@ -31,6 +32,7 @@ $(document).ready(function(){
     $("#total_display").fadeIn("slow");
     $("h3").fadeIn("slow");
     $("input#word").val(""); 
+
     event.preventDefault();
   });
 });

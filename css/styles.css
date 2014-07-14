@@ -23,7 +23,7 @@ body h3{
   background:black;
   border: 5px solid white;
   border-radius:5%;
-  margin-top:20px;
+  margin-top:70px;
   opacity:.7;
   display:none;
 }
@@ -56,12 +56,15 @@ body h3{
   margin-right: 20px;
 }
 
-#top_container {
+.top_container {
+  margin-top:200px;
   background-color:black;
   opacity:.6;
   border-radius: 10px;
   width:800px;
   margin-left:170px;
+}
+.top_container_form {
   margin-top:50px;
 }
 
